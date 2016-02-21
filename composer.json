@@ -1,0 +1,15 @@
+{
+    "name": "drips/orm",
+    "description": "ORM-System basierend auf Propel2.",
+    "keywords": ["database", "db", "orm"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.5",
+        "propel/propel": "~2.0@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Drips\\ORM\\": "src"
+        }
+    }
+}
