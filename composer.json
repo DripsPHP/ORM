@@ -4,7 +4,7 @@
     "keywords": ["database", "db", "orm"],
     "license": "MIT",
     "require": {
-        "php": ">=5.5",
+        "php": ">=5.4",
         "drips/database": ">=0.1",
         "drips/validator": ">=0.2"
     },
