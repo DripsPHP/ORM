@@ -1,0 +1,15 @@
+#!/usr/bin/php
+<?php
+
+$paths = array(
+    __DIR__."/vendor/propel/propel/bin/propel.php",
+    __DIR__."/../../propel/propel/bin/propel.php"
+);
+
+foreach($paths as $path)
+{
+    if(file_exists($path)){
+        require_once $path;
+        break;
+    }
+}
