@@ -4,11 +4,14 @@
     "keywords": ["database", "db", "orm"],
     "license": "MIT",
     "require": {
-        "propel/propel": "~2.0@dev"
+        "propel/propel": "~2.0@dev",
+        "drips/config": "dev-master"
     },
     "autoload": {
         "psr-4": {
             "Drips\\ORM\\": "src"
-        }
-    }
+        },
+        "files": ["drips.php"]
+    },
+    "minimum-stability": "dev"
 }
