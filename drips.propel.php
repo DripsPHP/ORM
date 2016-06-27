@@ -3,22 +3,6 @@ require_once __DIR__.'/index.php';
 
 use Drips\Config\Config;
 
-function generatePropelDSN(){
-    $type = Config::get('database_type', 'sqlite');
-    $host = Config::get('database_host', DRIPS_SRC.'/database.sqlitedb');
-    $port = Config::get('database_port', 3306);
-    $db = Config::get('database_name', 'drips');
-
-    $dsn = $type.':';
-    if($type == 'sqlite'){
-        $dsn .= $host;
-    } else {
-        $dsn .= 'host=' . $host . ';port=' . $port . 'dbname=' . $db;
-    }
-
-    return $dsn;
-}
-
 return [
     'propel' => [
         'paths' => [
