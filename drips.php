@@ -14,5 +14,7 @@ if(class_exists('Drips\App')){
         copy(DRIPS_ORM_PROPEL_CONFIG, $drips_propel_php);
     }
 
-    Config::create();
+    App::on('create', function() use ($drips_propel_php){
+        Config::create(@include($drips_propel_php));
+    });
 }
