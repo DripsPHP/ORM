@@ -16,7 +16,7 @@ if(!function_exists('generatePropelDSN')){
 	    if($type == 'sqlite'){
 	        $dsn .= $host;
 	    } else {
-	        $dsn .= 'host=' . $host . ';port=' . $port . 'dbname=' . $db;
+	        $dsn .= 'host=' . $host . ';port=' . $port . ';dbname=' . $db;
 	    }
 
 	    return $dsn;
