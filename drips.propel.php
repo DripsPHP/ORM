@@ -43,6 +43,9 @@ return [
                 ]
             ]
         ],
+	'runtime' => [
+		'defaultConnection' => 'default'
+	],
         'generator' => [
             'targetPackage' => 'models',
             'schema' => [
