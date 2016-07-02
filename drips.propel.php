@@ -50,9 +50,6 @@ return [
             'targetPackage' => 'models',
             'schema' => [
                     'autoNamespace' => true
-            ],
-            'objectModel' => [
-                'namespaceMap' => 'models'
             ]
         ],
     ]
