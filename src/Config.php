@@ -2,6 +2,7 @@
 
 namespace Drips\ORM;
 
+use Drips\Config\Config;
 use Drips\Logger\Logger;
 use Drips\Logger\Handler;
 use Monolog\Handler\StreamHandler;
@@ -33,7 +34,9 @@ abstract class Config
         $serviceContainer->setAdapterClass($name, $adapter);
         $serviceContainer->setConnectionManager($name, $manager);
         $serviceContainer->setDefaultDatasource($name);
-        $serviceContainer->setLogger($name, $logger);
+        if(Config::get('database_logging', true)){
+            $serviceContainer->setLogger($name, $logger);
+        }
         if(defined('DRIPS_DEBUG')) {
             if (DRIPS_DEBUG) {
                 Propel::getWriteConnection($name)->useDebug(true);
