@@ -23,7 +23,7 @@ if(!function_exists('generatePropelDSN')){
 	}
 }
 
-return [
+$config = [
     'propel' => [
         'paths' => [
             'schemaDir' => DRIPS_SRC,
@@ -37,9 +37,6 @@ return [
                     'dsn' => generatePropelDSN(),
                     'user' => Config::get('database_username', 'root'),
                     'password' => Config::get('database_password', 'root'),
-                    'settings' => [
-                        'charset' => Config::get('database_charset', 'utf8')
-                    ]
                 ]
             ]
         ],
@@ -54,3 +51,9 @@ return [
         ],
     ]
 ];
+
+if(Config::get('database_type', 'sqlite') != 'sqlite') {
+    $config['propel']['database']['connections']['default']['settings']['charset'] = Config::get('database_charset', 'utf8');
+}
+
+return $config;
